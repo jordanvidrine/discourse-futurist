@@ -1,0 +1,22 @@
+{
+  "name": "Futurist",
+  "about_url": null,
+  "license_url": null,
+  "modifiers": {
+    "serialize_topic_excerpts": true
+  },
+  "assets": {
+    "OpenSans-Bold": "assets/OpenSans-Bold.ttf",
+    "OpenSans-BoldItalic": "assets/OpenSans-BoldItalic.ttf",
+    "OpenSans-ExtraBold": "assets/OpenSans-ExtraBold.ttf",
+    "OpenSans-ExtraBoldItalic": "assets/OpenSans-ExtraBoldItalic.ttf",
+    "OpenSans-Italic": "assets/OpenSans-Italic.ttf",
+    "OpenSans-Light": "assets/OpenSans-Light.ttf",
+    "OpenSans-LightItalic": "assets/OpenSans-LightItalic.ttf",
+    "OpenSans-Regular": "assets/OpenSans-Regular.ttf",
+    "OpenSans-SemiBold": "assets/OpenSans-SemiBold.ttf",
+    "OpenSans-SemiBoldItalic": "assets/OpenSans-SemiBoldItalic.ttf"
+ },
+  "color_schemes": {
+  }
+}

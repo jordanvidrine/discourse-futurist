@@ -1,0 +1,14 @@
+{{#if bulkSelectEnabled}}
+  {{#if canBulkSelect}}
+    {{raw "flat-button" class="bulk-select" icon="list" title="topics.bulk.toggle"}}
+  {{/if}}
+{{/if}}
+{{log order}}
+<label for="sort">Sort Topics by</label>
+{{combo-box value=order content=selectOptions onChange=changeFilter}}
+{{!-- <div class="futurist-select">
+  <select name="sort" id="sort" onchange={{changeFilter}}>
+    <option value="activity" selected={{my-selected order "activity"}}>Activity</option>
+    <option value="posts" selected={{my-selected order "posts"}}>Posts</option>
+  </select>
+</div> --}}
