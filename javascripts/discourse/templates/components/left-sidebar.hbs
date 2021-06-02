@@ -1,0 +1,19 @@
+{{#if shouldShow}}
+  <div class="left-sidebar">
+    {{filterMode}}
+    {{#link-to homePageSetting class="courses-home left-sidebar-btn btn"}}{{d-icon "home"}} Home{{/link-to}}
+    {{#unless isNotTopic}}
+      {{bread-crumbs category=category categories=categories}}
+      {{navigation-bar navItems=navItems filterMode=filterMode class="compact-version"}}
+    {{/unless}}
+    <div class="left-sidebar-group links">
+      <h4 class="left-sidebar-group-header">Links</h4>
+      <ul class="left-sidebar-group-list">
+        <li class="left-sidebar-group-list-item">Link</li>
+        <li class="left-sidebar-group-list-item">Link</li>
+        <li class="left-sidebar-group-list-item">Link</li>
+        <li class="left-sidebar-group-list-item">Link</li>
+      </ul>
+    </div>
+  </div>
+{{/if}}

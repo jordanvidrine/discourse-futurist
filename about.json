@@ -6,17 +6,15 @@
     "serialize_topic_excerpts": true
   },
   "assets": {
-    "OpenSans-Bold": "assets/OpenSans-Bold.ttf",
-    "OpenSans-BoldItalic": "assets/OpenSans-BoldItalic.ttf",
-    "OpenSans-ExtraBold": "assets/OpenSans-ExtraBold.ttf",
-    "OpenSans-ExtraBoldItalic": "assets/OpenSans-ExtraBoldItalic.ttf",
-    "OpenSans-Italic": "assets/OpenSans-Italic.ttf",
-    "OpenSans-Light": "assets/OpenSans-Light.ttf",
-    "OpenSans-LightItalic": "assets/OpenSans-LightItalic.ttf",
-    "OpenSans-Regular": "assets/OpenSans-Regular.ttf",
-    "OpenSans-SemiBold": "assets/OpenSans-SemiBold.ttf",
-    "OpenSans-SemiBoldItalic": "assets/OpenSans-SemiBoldItalic.ttf"
- },
+    "icons-sprite": "/assets/custom-icons.svg"
+  },
   "color_schemes": {
+    "courses-light": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "6495ED",
+      "quaternary": "e45735",
+      "highlight": "ffff4d"
+    }
   }
 }

@@ -1,0 +1,58 @@
+<div class="right-sidebar">
+  <div class="right-sidebar-button-container">
+    {{create-topic-button
+      canCreateTopic=canCreateTopic
+      action=(action "clickCreateTopicButton")
+      disabled=createTopicButtonDisabled
+      label=createTopicLabel
+      btnClass=(concat createTopicClass " right-sidebar-button-container-new-post")
+    }}
+    {{#if category}}
+      {{#if showCategoryEdit}}
+          {{d-button
+            class="btn-default edit-category"
+            action=(route-action "editCategory" category)
+            icon="wrench"
+            label="category.edit"}}
+        {{/if}}
+    {{/if}}
+
+    {{#if showCategoryNotifications}}
+      {{category-notifications-button
+        value=category.notification_level
+        category=category
+        onChange=(action "changeCategoryNotificationLevel")
+      }}
+    {{/if}}
+  </div>
+  <div class="right-sidebar-group top-discussion">
+    <h1 class="right-sidebar-group-header">
+      Top Discussion
+    </h1>
+  </div>
+  {{#if category}}
+    <div class="right-sidebar-group members">
+      <h1 class="right-sidebar-group-header">
+        Members
+      </h1>
+      <ul class="right-sidebar-group-list">
+        <li class="right-sidebar-group-list-item"><a
+            href=""
+            class="avatar"
+          >J</a></li>
+        <li class="right-sidebar-group-list-item"><a
+            href=""
+            class="avatar"
+          >H</a></li>
+        <li class="right-sidebar-group-list-item"><a
+            href=""
+            class="avatar"
+          >G</a></li>
+        <li class="right-sidebar-group-list-item"><a
+            href=""
+            class="avatar"
+          >V</a></li>
+      </ul>
+    </div>
+  {{/if}}
+</div>
