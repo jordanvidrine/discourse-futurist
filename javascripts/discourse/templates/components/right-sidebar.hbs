@@ -7,6 +7,8 @@
       label=createTopicLabel
       btnClass=(concat createTopicClass " right-sidebar-button-container-new-post")
     }}
+    {{topic-dismiss-buttons position="top" selectedTopics=selectedTopics
+model=model showDismissRead=showDismissRead}}
     {{#if category}}
       {{#if showCategoryEdit}}
           {{d-button
@@ -27,7 +29,7 @@
   </div>
   <div class="right-sidebar-group top-discussion">
     <h1 class="right-sidebar-group-header">
-      Top Discussion
+      Pinned Topics
     </h1>
   </div>
   {{#if category}}

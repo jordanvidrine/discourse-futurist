@@ -6,9 +6,17 @@ import DNavigation from 'discourse/components/d-navigation';
 export default DNavigation.extend({
   tagName: "",
   router: service(),
+  selectedTopics: [],
 
   init() {
     this._super(...arguments);
+  },
+
+  _isFilterPage(filter, filterType) {
+    if (!filter) {
+      return false;
+    }
+    return new RegExp(filterType + "$", "gi").test(filter);
   },
 
   @discourseComputed("router.currentRoute.attributes.category")
@@ -16,6 +24,11 @@ export default DNavigation.extend({
     if (currentCategory) {
       return currentCategory;
     }
+  },
+
+  @discourseComputed("model.filter", "model.topics.length")
+  showDismissRead(filter, topicsLength) {
+    return this._isFilterPage(filter, "unread") && topicsLength > 0;
   },
 
   @discourseComputed("category.can_edit")

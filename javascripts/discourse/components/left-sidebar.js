@@ -1,8 +1,9 @@
 import Component from "@ember/component";
-import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import discourseComputed, { observes, on } from "discourse-common/utils/decorators";
 import { action } from "@ember/object";
 import { inject as service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
+import FilterModeMixin from "discourse/mixins/filter-mode";
 import DNavigation from 'discourse/components/d-navigation';
 
 export default DNavigation.extend({
@@ -13,9 +14,28 @@ export default DNavigation.extend({
     this._super(...arguments);
   },
 
-  @observes("filterMode")
-  _updateBodyClasses() {
-    console.log('should do something to the body classes');
+  @on("init")
+  _addBodyClasses() {
+    document.body.classList.add(this.filterMode)
+  },
+
+  willDestroyElement() {
+    document.body.classList.remove(this.filterMode)
+  },
+
+  @discourseComputed()
+  settingsLinks() {
+    if (settings.links) {
+      let links = settings.links.split(" | ").map(item => {
+        return {
+          title: item.split(",")[1],
+          link: item.split(",")[0]
+        }
+      })
+      return links;
+    } else {
+      return false;
+    }
   },
 
   @discourseComputed()
@@ -25,8 +45,7 @@ export default DNavigation.extend({
 
   @discourseComputed("router.currentRoute")
   filterMode(currentRoute) {
-    console.log('getting filterMode');
-    return currentRoute.name.split(".")[1] || "latest";
+    return currentRoute.localName || "latest";
   },
 
   @discourseComputed("router.currentRoute.attributes.category")

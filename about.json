@@ -5,6 +5,7 @@
   "modifiers": {
     "serialize_topic_excerpts": true
   },
+  "components":["https://github.com/discourse/discourse-clickable-topic.git","https://github.com/discourse/discourse-header-search.git"],
   "assets": {
     "icons-sprite": "/assets/custom-icons.svg"
   },

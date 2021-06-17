@@ -1,5 +1,3 @@
-@import "custom-search-bar";
-
 // 320px — 480px: Mobile devices
 // 481px — 768px: iPads, Tablets
 // 769px — 1024px: Small screens, laptops
@@ -9,12 +7,31 @@
 .navigation-container {
   display: none;
 }
+
 // --- Top Page --- //
-.navigation-topics.top {
+.navigation-topics.top,
+.navigation-topics.topAll,
+.navigation-topics.topYearly,
+.navigation-topics.topQuarterly,
+.navigation-topics.topMonthly,
+.navigation-topics.topWeekly,
+.navigation-topics.topDaily,
+body.topCategory,
+body.topAllCategory,
+body.topYearlyCategory,
+body.topQuarterlyCategory,
+body.topMonthlyCategory,
+body.topWeeklyCategory,
+body.topDailyCategory
+ {
   .full-width #list-area .contents {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-column-gap: 40px;
     grid-template-areas: "leftsidebar topiclisttop rightsidebar"
+    "leftsidebar topiclistbottom rightsidebar"
     "leftsidebar topiclistbottom rightsidebar";
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: 50px auto;
 
     .top-lists {
       grid-area: topiclisttop;
@@ -28,8 +45,12 @@
       grid-area: rightsidebar;
     }
 
-    table {
+    .topic-list {
       grid-area: topiclistbottom;
+      tbody {
+        border: none;
+        display: table;
+      }
     }
   }
 } 
@@ -140,7 +161,7 @@
 // --- End Latest Page --- //
 
 // --- Category Page --- //
-.category {
+.category:not(.topCategory):not(.topAllCategory):not(.topYearlyCategory):not(.topQuarterlyCategory):not(.topMonthlyCategory):not(.topWeeklyCategory):not(.topDailyCategory) {
   #main-outlet .list-container {
     .row:nth-of-type(2) .full-width #list-area {
       .contents {
@@ -258,10 +279,6 @@
     max-width: 98%;
     padding: 0 15px;
   }
-}
-
-#search-button {
-  display: none;
 }
 
 @media screen and (max-width: 768px) {

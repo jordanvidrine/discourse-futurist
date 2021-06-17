@@ -1,4 +1,4 @@
-social_link:
+links:
   type: string
   default: ""
   description: "Link to website and title separared by a comma. Ex. `http://google.com, My Site`"
