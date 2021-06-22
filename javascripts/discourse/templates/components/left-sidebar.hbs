@@ -1,6 +1,6 @@
 {{#if shouldShow}}
   <div class="left-sidebar">
-    {{#link-to homePageSetting class="courses-home left-sidebar-btn btn"}}{{d-icon "home"}} Home{{/link-to}}
+    {{#link-to homePageSetting class="courses-home left-sidebar-btn btn"}}{{d-icon "home"}} <span class="home-label">Home</span>{{/link-to}}
     {{#unless isNotTopic}}
       {{bread-crumbs category=category categories=categories}}
       {{navigation-bar navItems=navItems filterMode=filterMode class="compact-version"}}

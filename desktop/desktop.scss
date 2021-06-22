@@ -16,13 +16,13 @@
 .navigation-topics.topMonthly,
 .navigation-topics.topWeekly,
 .navigation-topics.topDaily,
-body.topCategory,
-body.topAllCategory,
-body.topYearlyCategory,
-body.topQuarterlyCategory,
-body.topMonthlyCategory,
-body.topWeeklyCategory,
-body.topDailyCategory
+body.top,
+body.topAll,
+body.topYearly,
+body.topQuarterly,
+body.topMonthly,
+body.topWeekly,
+body.topDaily
  {
   .full-width #list-area .contents {
     display: grid;
@@ -116,10 +116,20 @@ body.topDailyCategory
       .left-sidebar {
         grid-area: lefttop;
         display: flex;
+        flex-direction: row;
         width: 100%;
         height: 34px;
+        margin-bottom: 0.5em;
         .courses-home {
-          width: 150px;
+          display: none;
+        }
+        .category-breadcrumb, 
+         #navigation-bar {
+          width: 50%;
+          margin-right: 0.5em;
+        }
+        .category-breadcrumb .category-drop {
+          margin: 0 0.5em 0 0;
         }
         &-group {
           display: flex;
@@ -161,7 +171,7 @@ body.topDailyCategory
 // --- End Latest Page --- //
 
 // --- Category Page --- //
-.category:not(.topCategory):not(.topAllCategory):not(.topYearlyCategory):not(.topQuarterlyCategory):not(.topMonthlyCategory):not(.topWeeklyCategory):not(.topDailyCategory) {
+.category:not(.top):not(.topAll):not(.topYearly):not(.topQuarterly):not(.topMonthly):not(.topWeekly):not(.topDaily) {
   #main-outlet .list-container {
     .row:nth-of-type(2) .full-width #list-area {
       .contents {
@@ -171,7 +181,7 @@ body.topDailyCategory
         grid-template-areas: "leftsidebar topiclist rightsidebar";
 
         @media screen and (max-width: 1200px) { 
-          grid-template-columns: 15% 1fr 15% !important;
+          grid-template-columns: 18% 1fr 15% !important;
           grid-column-gap: 20px !important;
         }
 

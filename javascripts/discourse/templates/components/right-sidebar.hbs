@@ -27,34 +27,36 @@ model=model showDismissRead=showDismissRead}}
       }}
     {{/if}}
   </div>
-  <div class="right-sidebar-group top-discussion">
-    <h1 class="right-sidebar-group-header">
-      Pinned Topics
-    </h1>
-  </div>
   {{#if category}}
-    <div class="right-sidebar-group members">
-      <h1 class="right-sidebar-group-header">
-        Members
-      </h1>
-      <ul class="right-sidebar-group-list">
-        <li class="right-sidebar-group-list-item"><a
-            href=""
-            class="avatar"
-          >J</a></li>
-        <li class="right-sidebar-group-list-item"><a
-            href=""
-            class="avatar"
-          >H</a></li>
-        <li class="right-sidebar-group-list-item"><a
-            href=""
-            class="avatar"
-          >G</a></li>
-        <li class="right-sidebar-group-list-item"><a
-            href=""
-            class="avatar"
-          >V</a></li>
-      </ul>
-    </div>
+    {{#if pinnedTopics}}
+      <div class="right-sidebar-group top-discussion">
+        <h1 class="right-sidebar-group-header">
+          Pinned Topics
+        </h1>
+        <ul class="right-sidebar-group-list">
+          {{#each pinnedTopics as |topic|}}
+          <li class="right-sidebar-group-list-item">
+            <a href="/t/{{topic.slug}}/{{topic.id}}">{{topic.title}}</a>
+          </li>
+        {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+    {{#if groupMembers}}
+      <div class="right-sidebar-group members">
+        <h1 class="right-sidebar-group-header">
+          Members
+        </h1>
+        <ul class="right-sidebar-group-list">
+          {{#each groupMembers as |member|}}
+            <li class="right-sidebar-group-list-item">
+              <div data-user-card="{{member.username}}" class="right-sidebar-group-list-item-avatar">
+                {{avatar member avatarTemplatePath="avatar_template" usernamePath="username" namePath="name" imageSize="medium"}}
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
   {{/if}}
 </div>
